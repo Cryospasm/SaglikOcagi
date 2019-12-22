@@ -72,5 +72,24 @@ namespace Project
                 return null;
             return tablo.Rows[0];
         }
+
+        public bool Giris(string id,string pass)
+        {
+            MySqlConnection baglan = this.baglan();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM kullanici WHERE username=@id AND password=@pass", baglan);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@pass", pass);
+            MySqlDataReader read = cmd.ExecuteReader();
+            if (read.Read())
+            {
+                baglan.Close();
+                return true;
+            }
+            else
+            {
+                baglan.Close();
+                return false;
+            }
+        }
     }
 }

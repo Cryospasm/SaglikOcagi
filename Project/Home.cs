@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
-        public Form1()
+        public Home()
         {
             InitializeComponent();
         }
 
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Home_Load(object sender, EventArgs e)
         {
-            Baglanti bag = new Baglanti();
-            DataTable dt = new DataTable();
-            dt = bag.DataTableGetir("select * from hasta");
-            dataGridView1.DataSource = dt;
+            Giris girisChild = new Giris();
+            girisChild.MdiParent = this;
+            girisChild.Show();
         }
 
         
