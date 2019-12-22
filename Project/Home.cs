@@ -17,12 +17,13 @@ namespace Project
             InitializeComponent();
         }
 
+        Baglanti baglanti = new Baglanti();
 
         private void Home_Load(object sender, EventArgs e)
         {
             Giris girisChild = new Giris();
-            //girisChild.MdiParent = this;
-            girisChild.ShowDialog();
+            girisChild.MdiParent = this;
+            girisChild.Show();
         }
 
         private void çıkışToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -36,5 +37,7 @@ namespace Project
             poliklinikChild.MdiParent = this;
             poliklinikChild.Show();
         }
+
+        
     }
 }

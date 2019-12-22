@@ -45,7 +45,9 @@ namespace Project
                 if (state == true)
                 {
                     MessageBox.Show("Giriş başarılı");
+                    MessageBox.Show(baglanti.kod.ToString());
                     this.Close();
+                    
                 }
                 else if (state == false)
                 {
@@ -53,5 +55,7 @@ namespace Project
                 }
             }
         }
+
+        
     }
 }

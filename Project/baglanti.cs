@@ -11,6 +11,7 @@ namespace Project
 {
     public class Baglanti
     {
+        public int kod;
         public MySqlConnection baglan()//veritabanina baglanti kurar
         {
             MySqlConnection baglanti = new MySqlConnection("Server=127.0.0.1;Database=db;Uid=root;Pwd=cornelia;");
@@ -75,13 +76,15 @@ namespace Project
 
         public bool Giris(string id,string pass) // Login işlemleri
         {
+            
             MySqlConnection baglan = this.baglan();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM kullanici WHERE username=@id AND password=@pass", baglan);
+            MySqlCommand cmd = new MySqlCommand("SELECT kod,username,password FROM kullanici WHERE username=@id AND password=@pass", baglan);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@pass", pass);
             MySqlDataReader read = cmd.ExecuteReader();
             if (read.Read())
             {
+                kod = (int)read["kod"];
                 baglan.Close();
                 return true;
             }
@@ -90,8 +93,16 @@ namespace Project
                 baglan.Close();
                 return false;
             }
-
-
         }
+
+
+
+
+
+
+
+
+
+
     }
 }
