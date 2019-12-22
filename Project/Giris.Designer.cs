@@ -114,6 +114,7 @@
             this.Controls.Add(this.girisBtn);
             this.Name = "Giris";
             this.Text = "Giris";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Giris_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -12,6 +12,7 @@ namespace Project
     public class Baglanti
     {
         public int kod;
+        public string yetki;
         public MySqlConnection baglan()//veritabanina baglanti kurar
         {
             MySqlConnection baglanti = new MySqlConnection("Server=127.0.0.1;Database=db;Uid=root;Pwd=cornelia;");
@@ -78,13 +79,14 @@ namespace Project
         {
             
             MySqlConnection baglan = this.baglan();
-            MySqlCommand cmd = new MySqlCommand("SELECT kod,username,password FROM kullanici WHERE username=@id AND password=@pass", baglan);
+            MySqlCommand cmd = new MySqlCommand("SELECT kod,yetki,username,password FROM kullanici WHERE username=@id AND password=@pass", baglan);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@pass", pass);
             MySqlDataReader read = cmd.ExecuteReader();
             if (read.Read())
             {
                 kod = (int)read["kod"];
+                yetki = read["yetki"].ToString();
                 baglan.Close();
                 return true;
             }

@@ -40,12 +40,12 @@ namespace Project
             else
             {
                 bool state;
-                DataTable dt = new DataTable();
                 state = baglanti.Giris(textBox1.Text, textBox2.Text);
                 if (state == true)
                 {
                     MessageBox.Show("Giriş başarılı");
                     MessageBox.Show(baglanti.kod.ToString());
+                    MessageBox.Show(baglanti.yetki.ToString());
                     this.Close();
                     
                 }
@@ -56,6 +56,18 @@ namespace Project
             }
         }
 
-        
+        private void Giris_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Home parent = (Home)Owner;
+            //parent.settext(baglanti.kod.ToString());
+            if (baglanti.yetki == "doktor")
+            {
+                parent.yetki("0",baglanti.kod);
+            }
+            else if(baglanti.yetki == "hemşire")
+            {
+                parent.yetki("1",baglanti.kod);
+            }
+        }
     }
 }

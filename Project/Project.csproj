@@ -61,6 +61,18 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="KullaniciBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullaniciBilgi.Designer.cs">
+      <DependentUpon>KullaniciBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullaniciTanit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullaniciTanit.Designer.cs">
+      <DependentUpon>KullaniciTanit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Poliklinik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +86,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullaniciBilgi.resx">
+      <DependentUpon>KullaniciBilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullaniciTanit.resx">
+      <DependentUpon>KullaniciTanit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Poliklinik.resx">
       <DependentUpon>Poliklinik.cs</DependentUpon>
