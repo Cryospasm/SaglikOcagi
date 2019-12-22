@@ -21,10 +21,20 @@ namespace Project
         private void Home_Load(object sender, EventArgs e)
         {
             Giris girisChild = new Giris();
-            girisChild.MdiParent = this;
-            girisChild.Show();
+            //girisChild.MdiParent = this;
+            girisChild.ShowDialog();
         }
 
-        
+        private void çıkışToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void poliklinikTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Poliklinik poliklinikChild = new Poliklinik();
+            poliklinikChild.MdiParent = this;
+            poliklinikChild.Show();
+        }
     }
 }

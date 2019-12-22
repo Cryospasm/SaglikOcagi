@@ -73,7 +73,7 @@ namespace Project
             return tablo.Rows[0];
         }
 
-        public bool Giris(string id,string pass)
+        public bool Giris(string id,string pass) // Login işlemleri
         {
             MySqlConnection baglan = this.baglan();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM kullanici WHERE username=@id AND password=@pass", baglan);
@@ -90,6 +90,8 @@ namespace Project
                 baglan.Close();
                 return false;
             }
+
+
         }
     }
 }

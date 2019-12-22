@@ -33,17 +33,24 @@ namespace Project
 
         private void girisBtn_Click(object sender, EventArgs e)
         {
-            bool state;
-            DataTable dt = new DataTable();
-            state=baglanti.Giris(textBox1.Text, textBox2.Text);
-            if (state == true)
+            if (textBox1.Text == "" || textBox2.Text == "")
             {
-                MessageBox.Show("Giriş başarılı");
-                this.Close();
+                MessageBox.Show("Lütfen boş alan bırakmayın.");
             }
-            else if (state == false)
+            else
             {
-                MessageBox.Show("Kullanıcı adı veya şifre hatalı.");
+                bool state;
+                DataTable dt = new DataTable();
+                state = baglanti.Giris(textBox1.Text, textBox2.Text);
+                if (state == true)
+                {
+                    MessageBox.Show("Giriş başarılı");
+                    this.Close();
+                }
+                else if (state == false)
+                {
+                    MessageBox.Show("Kullanıcı adı veya şifre hatalı.");
+                }
             }
         }
     }
