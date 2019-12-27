@@ -70,6 +70,7 @@
             this.poliklinikTanıtmaToolStripMenuItem.Name = "poliklinikTanıtmaToolStripMenuItem";
             this.poliklinikTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.poliklinikTanıtmaToolStripMenuItem.Text = "Poliklinik Tanıtma";
+            this.poliklinikTanıtmaToolStripMenuItem.Click += new System.EventHandler(this.poliklinikTanıtmaToolStripMenuItem_Click);
             // 
             // kullanıcıTanıtmaToolStripMenuItem
             // 

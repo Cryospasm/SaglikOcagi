@@ -88,5 +88,11 @@ namespace Project
             Giris giris = new Giris();
             FormAc(giris);
         }
+
+        private void poliklinikTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PoliklinikTanit poliklinik = new PoliklinikTanit();
+            FormAc(poliklinik);
+        }
     }
 }

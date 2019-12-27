@@ -14,4 +14,9 @@ namespace Project
     {
         public static string YetkliKullanici = "false";
     }
+
+    public static class PoliklinikVeriAktarimi
+    {
+        public static string poliklinikAd = "", poliklinikAciklama = "", gecerliMi = "";
+    }
 }
