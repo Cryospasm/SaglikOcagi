@@ -8,6 +8,8 @@ namespace Project
 {
     static class Program
     {
+        internal static Home owner;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

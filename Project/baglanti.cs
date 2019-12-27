@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using MySql.Data;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Project
 {
@@ -13,12 +12,12 @@ namespace Project
     {
         public int kod;
         public string yetki;
-        public MySqlConnection baglan()//veritabanina baglanti kurar
+        public SqlConnection baglan()//veritabanina baglanti kurar
         {
-            MySqlConnection baglanti = new MySqlConnection("Server=127.0.0.1;Database=db;Uid=root;Pwd=cornelia;");
+            SqlConnection baglanti = new SqlConnection(@"Data Source = (localdb)\deniz; Initial Catalog = database; Integrated Security = True");
             baglanti.Open();
-            MySqlConnection.ClearPool(baglanti);
-            MySqlConnection.ClearAllPools();
+            SqlConnection.ClearPool(baglanti);
+            SqlConnection.ClearAllPools();
 
             return baglanti;
         }
@@ -27,14 +26,14 @@ namespace Project
         public int idu(string sqlcumle)//insert update ve delete islemlerini yapar
         {
 
-            MySqlConnection baglan = this.baglan();
-            MySqlCommand sorgu = new MySqlCommand(sqlcumle, baglan);
+            SqlConnection baglan = this.baglan();
+            SqlCommand sorgu = new SqlCommand(sqlcumle, baglan);
             int sonuc = 0;
             try
             {
                 sonuc = sorgu.ExecuteNonQuery();
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
 
                 throw new Exception(ex.Message);
@@ -48,14 +47,14 @@ namespace Project
 
         public DataTable DataTableGetir(string sql)// veri çeker
         {
-            MySqlConnection baglan = this.baglan();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, baglan);
+            SqlConnection baglan = this.baglan();
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, baglan);
             DataTable dt = new DataTable();
             try
             {
                 adapter.Fill(dt);
             }
-            catch (MySqlException ex)
+            catch (SqlException ex)
             {
 
                 throw new Exception(ex.Message);
@@ -75,18 +74,17 @@ namespace Project
             return tablo.Rows[0];
         }
 
-        public bool Giris(string id,string pass) // Login işlemleri
+        public bool Giris(string id,string sifre) // Login işlemleri
         {
-            
-            MySqlConnection baglan = this.baglan();
-            MySqlCommand cmd = new MySqlCommand("SELECT kod,yetki,username,password FROM kullanici WHERE username=@id AND password=@pass", baglan);
+
+            SqlConnection baglan = this.baglan();
+            SqlCommand cmd = new SqlCommand("SELECT yetki,username,sifre FROM kullanici WHERE username=@id AND sifre=@sifre", baglan);
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@pass", pass);
-            MySqlDataReader read = cmd.ExecuteReader();
+            cmd.Parameters.AddWithValue("@sifre", sifre);
+            SqlDataReader read = cmd.ExecuteReader();
             if (read.Read())
             {
-                kod = (int)read["kod"];
-                yetki = read["yetki"].ToString();
+                YetkiliKullaniciKontorl.YetkliKullanici = read["yetki"].ToString().Trim(); // Yetkiyi kaydettik
                 baglan.Close();
                 return true;
             }

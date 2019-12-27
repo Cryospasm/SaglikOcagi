@@ -15,63 +15,94 @@ namespace Project
         public Home()
         {
             InitializeComponent();
+            Giris giris = new Giris();
+            FormAc(giris);
+            hastaKabulToolStripMenuItem.Enabled = false;
+            kullaniciİşlemleriToolStripMenuItem.Enabled = false;
+            raporlarToolStripMenuItem.Enabled = false;
+            referanslarToolStripMenuItem.Visible = false;
         }
 
         Baglanti baglanti = new Baglanti();
-        Giris child = new Giris();
 
         private void Home_Load(object sender, EventArgs e)
         {
-            //Giris girisChild = new Giris();
-            //girisChild.MdiParent = this;
-            //girisChild.Show();
-            
-            child.ShowDialog(this);
+            Program.owner = this;   //tüm program içinde owner formun bu form olduğunu belirtiyoruz.
+            IsMdiContainer = true;
 
         }
         
-        public void yetki(string yetki,int kod) // yetki ve kod alıp maine yazdırma 
-        {
-            bbbbbbb.Text = yetki;
-            if (yetki == "0")
-            {
-                label1.Text=kod.ToString();
-                referanslarToolStripMenuItem.Visible = true;
-            }
-            else
-            {
-                label1.Text = kod.ToString();
-                referanslarToolStripMenuItem.Visible = false;
-            }
-            
-        }
-
-
         private void çıkışToolStripMenuItem1_Click(object sender, EventArgs e) // çıkış butonu
         {
             Application.Exit();
         }
 
-        private void poliklinikTanıtmaToolStripMenuItem_Click(object sender, EventArgs e) 
+        public void FormAc(Form AcilacakForm)
         {
-            Poliklinik poliklinikChild = new Poliklinik();
-            poliklinikChild.MdiParent = this;
-            poliklinikChild.Show();
+            bool durum = false;
+
+            foreach (Form form in this.MdiChildren)
+            {
+                //Eğer Form2 Form1 üzrinde açıldıysa
+                if (form.Text == AcilacakForm.Text)
+                {
+                    // açıksa true 
+                    durum = true;
+                    // Form 2 Aktif Edildi
+                    form.Activate();
+                    form.Show();
+                }
+                else
+                    form.Close();
+            }
+
+            // Form2 Form1 üzerinde açık değilse
+            if (!durum)
+            {
+                //Form2'nin ana penceresi olarak Form1 i ayarladık
+                AcilacakForm.MdiParent = this;
+                //Form2'yi açtık
+                AcilacakForm.Show();
+            }
         }
 
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        public void Menu_ReferanslarAktif()
         {
-            //baglanti.kod = 0;
-            //baglanti.yetki = "";
-            //child.ShowDialog();
-            
+            hastaKabulToolStripMenuItem.Enabled = true;
+            raporlarToolStripMenuItem.Enabled = true;
+            referanslarToolStripMenuItem.Visible = true;
+            kullaniciİşlemleriToolStripMenuItem.Enabled = true;
+            YetkiliKullaniciKontrol();
+        }
+
+        public void YetkiliKullaniciKontrol()
+        {
+            if (YetkiliKullaniciKontorl.YetkliKullanici == "true")
+            {
+                referanslarToolStripMenuItem.Visible = true;
+            }
+            else
+                referanslarToolStripMenuItem.Visible = false;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        private void poliklinikTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void kullanıcıTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KullaniciTanit kullaniciT = new KullaniciTanit();
-            kullaniciT.MdiParent = this;
-            kullaniciT.Show();
+
         }
     }
 }

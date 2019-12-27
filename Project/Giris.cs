@@ -33,6 +33,8 @@ namespace Project
 
         private void girisBtn_Click(object sender, EventArgs e)
         {
+            Boolean durum = false;
+
             if (textBox1.Text == "" || textBox2.Text == "")
             {
                 MessageBox.Show("Lütfen boş alan bırakmayın.");
@@ -44,10 +46,9 @@ namespace Project
                 if (state == true)
                 {
                     MessageBox.Show("Giriş başarılı");
-                    MessageBox.Show(baglanti.kod.ToString());
-                    MessageBox.Show(baglanti.yetki.ToString());
-                    this.Close();
-                    
+                    ((Home)this.MdiParent).Menu_ReferanslarAktif();
+                    this.Hide();
+
                 }
                 else if (state == false)
                 {
@@ -56,18 +57,5 @@ namespace Project
             }
         }
 
-        private void Giris_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Home parent = (Home)Owner;
-            //parent.settext(baglanti.kod.ToString());
-            if (baglanti.yetki == "doktor")
-            {
-                parent.yetki("0",baglanti.kod);
-            }
-            else if(baglanti.yetki == "hemşire")
-            {
-                parent.yetki("1",baglanti.kod);
-            }
-        }
     }
 }
