@@ -32,11 +32,6 @@ namespace Project
 
         }
         
-        private void çıkışToolStripMenuItem1_Click(object sender, EventArgs e) // çıkış butonu
-        {
-            Application.Exit();
-        }
-
         public void FormAc(Form AcilacakForm)
         {
             bool durum = false;
@@ -85,24 +80,13 @@ namespace Project
                 referanslarToolStripMenuItem.Visible = false;
         }
 
-
-
-
-
-
-
-
-
-
-
-        private void poliklinikTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void çıkışToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void kullanıcıTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            hastaKabulToolStripMenuItem.Enabled = false;
+            raporlarToolStripMenuItem.Enabled = false;
+            referanslarToolStripMenuItem.Visible = false;
+            Giris giris = new Giris();
+            FormAc(giris);
         }
     }
 }

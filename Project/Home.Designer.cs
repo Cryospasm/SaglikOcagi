@@ -68,20 +68,21 @@
             // poliklinikTanıtmaToolStripMenuItem
             // 
             this.poliklinikTanıtmaToolStripMenuItem.Name = "poliklinikTanıtmaToolStripMenuItem";
-            this.poliklinikTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.poliklinikTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.poliklinikTanıtmaToolStripMenuItem.Text = "Poliklinik Tanıtma";
             // 
             // kullanıcıTanıtmaToolStripMenuItem
             // 
             this.kullanıcıTanıtmaToolStripMenuItem.Name = "kullanıcıTanıtmaToolStripMenuItem";
-            this.kullanıcıTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.kullanıcıTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.kullanıcıTanıtmaToolStripMenuItem.Text = "Kullanıcı Tanıtma";
             // 
             // çıkışToolStripMenuItem
             // 
             this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.çıkışToolStripMenuItem.Text = "Çıkış";
+            this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click_1);
             // 
             // hastaKabulToolStripMenuItem
             // 
