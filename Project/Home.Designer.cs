@@ -32,7 +32,6 @@
             this.referanslarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.poliklinikTanıtmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kullanıcıTanıtmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.çıkışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hastaKabulToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hastaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,8 +58,7 @@
             // 
             this.referanslarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.poliklinikTanıtmaToolStripMenuItem,
-            this.kullanıcıTanıtmaToolStripMenuItem,
-            this.çıkışToolStripMenuItem});
+            this.kullanıcıTanıtmaToolStripMenuItem});
             this.referanslarToolStripMenuItem.Name = "referanslarToolStripMenuItem";
             this.referanslarToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.referanslarToolStripMenuItem.Text = "Referanslar";
@@ -77,13 +75,6 @@
             this.kullanıcıTanıtmaToolStripMenuItem.Name = "kullanıcıTanıtmaToolStripMenuItem";
             this.kullanıcıTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.kullanıcıTanıtmaToolStripMenuItem.Text = "Kullanıcı Tanıtma";
-            // 
-            // çıkışToolStripMenuItem
-            // 
-            this.çıkışToolStripMenuItem.Name = "çıkışToolStripMenuItem";
-            this.çıkışToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.çıkışToolStripMenuItem.Text = "Çıkış";
-            this.çıkışToolStripMenuItem.Click += new System.EventHandler(this.çıkışToolStripMenuItem_Click_1);
             // 
             // hastaKabulToolStripMenuItem
             // 
@@ -108,8 +99,8 @@
             // kullaniciİşlemleriToolStripMenuItem
             // 
             this.kullaniciİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programdanÇıkToolStripMenuItem1,
-            this.çıkışYapToolStripMenuItem1});
+            this.çıkışYapToolStripMenuItem1,
+            this.programdanÇıkToolStripMenuItem1});
             this.kullaniciİşlemleriToolStripMenuItem.Name = "kullaniciİşlemleriToolStripMenuItem";
             this.kullaniciİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.kullaniciİşlemleriToolStripMenuItem.Text = "Kullanici İşlemleri";
@@ -117,14 +108,15 @@
             // programdanÇıkToolStripMenuItem1
             // 
             this.programdanÇıkToolStripMenuItem1.Name = "programdanÇıkToolStripMenuItem1";
-            this.programdanÇıkToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.programdanÇıkToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.programdanÇıkToolStripMenuItem1.Text = "Programdan Çık";
             // 
             // çıkışYapToolStripMenuItem1
             // 
             this.çıkışYapToolStripMenuItem1.Name = "çıkışYapToolStripMenuItem1";
-            this.çıkışYapToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.çıkışYapToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.çıkışYapToolStripMenuItem1.Text = "Çıkış Yap / Log Out";
+            this.çıkışYapToolStripMenuItem1.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem1_Click);
             // 
             // Home
             // 
@@ -149,7 +141,6 @@
         private System.Windows.Forms.ToolStripMenuItem referanslarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem poliklinikTanıtmaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kullanıcıTanıtmaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hastaKabulToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hastaİşlemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;

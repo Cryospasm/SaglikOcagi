@@ -14,7 +14,7 @@ namespace Project
         public string yetki;
         public SqlConnection baglan()//veritabanina baglanti kurar
         {
-            SqlConnection baglanti = new SqlConnection(@"Data Source = (localdb)\deniz; Initial Catalog = database; Integrated Security = True");
+            SqlConnection baglanti = new SqlConnection(@"Data Source=(localdb)\deniz;Initial Catalog=database;Integrated Security=True");
             baglanti.Open();
             SqlConnection.ClearPool(baglanti);
             SqlConnection.ClearAllPools();
@@ -93,6 +93,29 @@ namespace Project
                 baglan.Close();
                 return false;
             }
+        }
+
+
+        public bool PoliklinikKontrol(string sql)
+        {
+            SqlConnection baglan = this.baglan();
+            SqlCommand cmd = new SqlCommand(sql, this.baglan());
+            SqlDataReader read = cmd.ExecuteReader();
+            while(read.Read())
+            {
+                PoliklinikVeriAktarimi.gecerliMi = read["durum"].ToString();
+                PoliklinikVeriAktarimi.poliklinikAciklama = read["aciklama"].ToString();
+                PoliklinikVeriAktarimi.poliklinikAd = read["poliklinikAdi"].ToString();
+                if (PoliklinikVeriAktarimi.poliklinikAd != "" || PoliklinikVeriAktarimi.gecerliMi != "" || PoliklinikVeriAktarimi.poliklinikAciklama != "")
+                {
+                    Poliklinik p = new Poliklinik();
+                    p.MdiParent = Program.owner;
+                    p.Show();
+                    return true; //veri var
+                }
+                
+            }
+            return false;
         }
 
 

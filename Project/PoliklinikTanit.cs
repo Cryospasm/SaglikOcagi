@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace Project
@@ -46,6 +47,9 @@ namespace Project
             }
         }
 
+        SqlCommand cmd;
+        SqlDataReader dr;
+        SqlConnection bag = new SqlConnection(@"Data Source=(localdb)\deniz;Initial Catalog=database;Integrated Security=True");
         private void comboBox1_PoliklinikGirisAd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && comboBox1_PoliklinikGirisAd.Text != "")
@@ -70,12 +74,12 @@ namespace Project
                         try
                         {
                             PoliklinikVeriAktarimi.poliklinikAd = comboBox1_PoliklinikGirisAd.Text;
-                            cmd = new SqlCommand("INSERT INTO SOHTS.dbo.poliklinik (poliklinikAdi) VALUES(@PoliklinikAd)", SQLBaglanti.SqlBaglan());
+                            cmd = new SqlCommand("INSERT INTO poliklinik (poliklinikAdi) VALUES(@PoliklinikAd)", bag);
 
                             cmd.Parameters.Add("@PoliklinikAd", SqlDbType.VarChar);
                             cmd.Parameters["@PoliklinikAd"].Value = PoliklinikVeriAktarimi.poliklinikAd;
 
-                            SQLBaglanti.SqlBaglan().Open();
+                            bag.Open();
                             cmd.ExecuteNonQuery();
 
                             Poliklinik p = new Poliklinik();
@@ -89,7 +93,7 @@ namespace Project
                         }
                         finally
                         {
-                            //SQLBaglanti.SqlBaglan().Close();
+                            bag.Close();
                         }
                     }
                 }
@@ -104,10 +108,10 @@ namespace Project
         {
             try
             {
-                cmd = new SqlCommand("SELECT * From SOHTS.dbo.poliklinik WHERE poliklinikAdi = @PoliklinikAd", SQLBaglanti.SqlBaglan());
+                cmd = new SqlCommand("SELECT * From poliklinik WHERE poliklinikAdi = @PoliklinikAd", bag);
                 cmd.Parameters.Add("@PoliklinikAd", SqlDbType.VarChar);
                 cmd.Parameters["@PoliklinikAd"].Value = poliklinikAd;
-                SQLBaglanti.SqlBaglan().Open();
+                bag.Open();
 
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -131,9 +135,10 @@ namespace Project
             }
             finally
             {
-                //SQLBaglanti.SqlBaglan().Close();
+                bag.Close();
             }
             return true;
+
         }
     }
 }

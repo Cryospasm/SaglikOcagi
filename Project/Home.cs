@@ -80,7 +80,15 @@ namespace Project
                 referanslarToolStripMenuItem.Visible = false;
         }
 
-        private void çıkışToolStripMenuItem_Click_1(object sender, EventArgs e)
+        
+
+        private void poliklinikTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PoliklinikTanit poliklinik = new PoliklinikTanit();
+            FormAc(poliklinik);
+        }
+
+        private void çıkışYapToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             hastaKabulToolStripMenuItem.Enabled = false;
             raporlarToolStripMenuItem.Enabled = false;
@@ -89,10 +97,6 @@ namespace Project
             FormAc(giris);
         }
 
-        private void poliklinikTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PoliklinikTanit poliklinik = new PoliklinikTanit();
-            FormAc(poliklinik);
-        }
+        
     }
 }

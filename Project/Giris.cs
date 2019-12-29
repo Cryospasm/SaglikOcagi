@@ -55,6 +55,8 @@ namespace Project
                     MessageBox.Show("Kullanıcı adı veya şifre hatalı.");
                 }
             }
+            textBox1.Text = "";
+            textBox2.Text = "";
         }
 
     }
