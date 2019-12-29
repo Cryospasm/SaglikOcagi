@@ -46,6 +46,7 @@
             this.button_PoliklinikCikisYap.TabIndex = 18;
             this.button_PoliklinikCikisYap.Text = "Kapat";
             this.button_PoliklinikCikisYap.UseVisualStyleBackColor = true;
+            this.button_PoliklinikCikisYap.Click += new System.EventHandler(this.button_PoliklinikCikisYap_Click);
             // 
             // button_PoliklinikSil
             // 
@@ -55,6 +56,7 @@
             this.button_PoliklinikSil.TabIndex = 19;
             this.button_PoliklinikSil.Text = "Sil";
             this.button_PoliklinikSil.UseVisualStyleBackColor = true;
+            this.button_PoliklinikSil.Click += new System.EventHandler(this.button_PoliklinikSil_Click);
             // 
             // button1_PoliklinikGuncelle
             // 
@@ -64,6 +66,7 @@
             this.button1_PoliklinikGuncelle.TabIndex = 20;
             this.button1_PoliklinikGuncelle.Text = "Güncelle";
             this.button1_PoliklinikGuncelle.UseVisualStyleBackColor = true;
+            this.button1_PoliklinikGuncelle.Click += new System.EventHandler(this.button1_PoliklinikGuncelle_Click);
             // 
             // textBox_PoliklinikAciklama
             // 
@@ -126,6 +129,7 @@
             this.Controls.Add(this.checkBox_poliklinikGecerliMi);
             this.Name = "Poliklinik";
             this.Text = "Poliklinik";
+            this.Load += new System.EventHandler(this.Poliklinik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
