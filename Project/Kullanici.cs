@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class KullaniciBilgi : Form
+    public partial class Kullanici : Form
     {
-        public KullaniciBilgi()
+        public Kullanici()
         {
             InitializeComponent();
         }

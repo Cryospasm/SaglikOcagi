@@ -28,71 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.yeniKulEkleBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.comboBox1_KullanicilarEkranaBas = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(163, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Kullanıcı Kodu";
             // 
             // yeniKulEkleBtn
             // 
-            this.yeniKulEkleBtn.Location = new System.Drawing.Point(100, 104);
+            this.yeniKulEkleBtn.Location = new System.Drawing.Point(72, 85);
             this.yeniKulEkleBtn.Name = "yeniKulEkleBtn";
             this.yeniKulEkleBtn.Size = new System.Drawing.Size(155, 23);
             this.yeniKulEkleBtn.TabIndex = 2;
             this.yeniKulEkleBtn.Text = "Yeni Kullanıcı Ekle";
             this.yeniKulEkleBtn.UseVisualStyleBackColor = true;
+            this.yeniKulEkleBtn.Click += new System.EventHandler(this.yeniKulEkleBtn_Click);
             // 
-            // dataGridView1
+            // comboBox1_KullanicilarEkranaBas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(326, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 3;
+            this.comboBox1_KullanicilarEkranaBas.FormattingEnabled = true;
+            this.comboBox1_KullanicilarEkranaBas.Location = new System.Drawing.Point(143, 42);
+            this.comboBox1_KullanicilarEkranaBas.MaximumSize = new System.Drawing.Size(121, 0);
+            this.comboBox1_KullanicilarEkranaBas.MinimumSize = new System.Drawing.Size(121, 0);
+            this.comboBox1_KullanicilarEkranaBas.Name = "comboBox1_KullanicilarEkranaBas";
+            this.comboBox1_KullanicilarEkranaBas.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1_KullanicilarEkranaBas.TabIndex = 4;
+            this.comboBox1_KullanicilarEkranaBas.SelectedIndexChanged += new System.EventHandler(this.comboBox1_KullanicilarEkranaBas_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(31, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Kullanıcı Adı";
             // 
             // KullaniciTanit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 290);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.yeniKulEkleBtn);
+            this.ClientSize = new System.Drawing.Size(300, 154);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox1_KullanicilarEkranaBas);
+            this.Controls.Add(this.yeniKulEkleBtn);
             this.Name = "KullaniciTanit";
             this.Text = "KullaniciTanit";
             this.Load += new System.EventHandler(this.KullaniciTanit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button yeniKulEkleBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBox1_KullanicilarEkranaBas;
+        private System.Windows.Forms.Label label1;
     }
 }

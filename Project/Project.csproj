@@ -67,11 +67,11 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="KullaniciBilgi.cs">
+    <Compile Include="Kullanici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KullaniciBilgi.Designer.cs">
-      <DependentUpon>KullaniciBilgi.cs</DependentUpon>
+    <Compile Include="Kullanici.Designer.cs">
+      <DependentUpon>Kullanici.cs</DependentUpon>
     </Compile>
     <Compile Include="KullaniciTanit.cs">
       <SubType>Form</SubType>
@@ -99,8 +99,8 @@
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KullaniciBilgi.resx">
-      <DependentUpon>KullaniciBilgi.cs</DependentUpon>
+    <EmbeddedResource Include="Kullanici.resx">
+      <DependentUpon>Kullanici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KullaniciTanit.resx">
       <DependentUpon>KullaniciTanit.cs</DependentUpon>

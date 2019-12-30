@@ -36,8 +36,8 @@
             this.hastaİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kullaniciİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programdanÇıkToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.çıkışYapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.programdanÇıkToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,7 @@
             this.kullanıcıTanıtmaToolStripMenuItem.Name = "kullanıcıTanıtmaToolStripMenuItem";
             this.kullanıcıTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.kullanıcıTanıtmaToolStripMenuItem.Text = "Kullanıcı Tanıtma";
+            this.kullanıcıTanıtmaToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıTanıtmaToolStripMenuItem_Click);
             // 
             // hastaKabulToolStripMenuItem
             // 
@@ -105,18 +106,18 @@
             this.kullaniciİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.kullaniciİşlemleriToolStripMenuItem.Text = "Kullanici İşlemleri";
             // 
-            // programdanÇıkToolStripMenuItem1
-            // 
-            this.programdanÇıkToolStripMenuItem1.Name = "programdanÇıkToolStripMenuItem1";
-            this.programdanÇıkToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.programdanÇıkToolStripMenuItem1.Text = "Programdan Çık";
-            // 
             // çıkışYapToolStripMenuItem1
             // 
             this.çıkışYapToolStripMenuItem1.Name = "çıkışYapToolStripMenuItem1";
-            this.çıkışYapToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.çıkışYapToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.çıkışYapToolStripMenuItem1.Text = "Çıkış Yap / Log Out";
             this.çıkışYapToolStripMenuItem1.Click += new System.EventHandler(this.çıkışYapToolStripMenuItem1_Click);
+            // 
+            // programdanÇıkToolStripMenuItem1
+            // 
+            this.programdanÇıkToolStripMenuItem1.Name = "programdanÇıkToolStripMenuItem1";
+            this.programdanÇıkToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.programdanÇıkToolStripMenuItem1.Text = "Programdan Çık";
             // 
             // Home
             // 

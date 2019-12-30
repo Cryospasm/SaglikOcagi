@@ -97,6 +97,10 @@ namespace Project
             FormAc(giris);
         }
 
-        
+        private void kullanıcıTanıtmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KullaniciTanit kul= new KullaniciTanit();
+            FormAc(kul);
+        }
     }
 }
