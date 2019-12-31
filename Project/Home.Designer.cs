@@ -66,14 +66,14 @@
             // poliklinikTanıtmaToolStripMenuItem
             // 
             this.poliklinikTanıtmaToolStripMenuItem.Name = "poliklinikTanıtmaToolStripMenuItem";
-            this.poliklinikTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.poliklinikTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.poliklinikTanıtmaToolStripMenuItem.Text = "Poliklinik Tanıtma";
             this.poliklinikTanıtmaToolStripMenuItem.Click += new System.EventHandler(this.poliklinikTanıtmaToolStripMenuItem_Click);
             // 
             // kullanıcıTanıtmaToolStripMenuItem
             // 
             this.kullanıcıTanıtmaToolStripMenuItem.Name = "kullanıcıTanıtmaToolStripMenuItem";
-            this.kullanıcıTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kullanıcıTanıtmaToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.kullanıcıTanıtmaToolStripMenuItem.Text = "Kullanıcı Tanıtma";
             this.kullanıcıTanıtmaToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıTanıtmaToolStripMenuItem_Click);
             // 
@@ -90,6 +90,7 @@
             this.hastaİşlemleriToolStripMenuItem.Name = "hastaİşlemleriToolStripMenuItem";
             this.hastaİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.hastaİşlemleriToolStripMenuItem.Text = "Hasta İşlemleri      F2";
+            this.hastaİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.hastaİşlemleriToolStripMenuItem_Click);
             // 
             // raporlarToolStripMenuItem
             // 

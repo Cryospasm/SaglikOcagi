@@ -438,6 +438,7 @@
             this.button4_Cikis.TabIndex = 51;
             this.button4_Cikis.Text = "Kapat";
             this.button4_Cikis.UseVisualStyleBackColor = true;
+            this.button4_Cikis.Click += new System.EventHandler(this.button4_Cikis_Click);
             // 
             // button3_Sil
             // 
@@ -447,6 +448,7 @@
             this.button3_Sil.TabIndex = 53;
             this.button3_Sil.Text = "Sil";
             this.button3_Sil.UseVisualStyleBackColor = true;
+            this.button3_Sil.Click += new System.EventHandler(this.button3_Sil_Click);
             // 
             // button2_Guncelle
             // 
@@ -456,6 +458,7 @@
             this.button2_Guncelle.TabIndex = 52;
             this.button2_Guncelle.Text = "Güncelle";
             this.button2_Guncelle.UseVisualStyleBackColor = true;
+            this.button2_Guncelle.Click += new System.EventHandler(this.button2_Guncelle_Click);
             // 
             // button1_Temizle
             // 
@@ -465,6 +468,7 @@
             this.button1_Temizle.TabIndex = 50;
             this.button1_Temizle.Text = "Temizle";
             this.button1_Temizle.UseVisualStyleBackColor = true;
+            this.button1_Temizle.Click += new System.EventHandler(this.button1_Temizle_Click);
             // 
             // Kullanici
             // 
@@ -517,6 +521,7 @@
             this.Controls.Add(this.button1_Temizle);
             this.Name = "Kullanici";
             this.Text = "KullaniciBilgi";
+            this.Load += new System.EventHandler(this.Kullanici_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -102,5 +102,10 @@ namespace Project
             KullaniciTanit kul= new KullaniciTanit();
             FormAc(kul);
         }
+
+        private void hastaİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
